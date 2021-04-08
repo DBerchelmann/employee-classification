@@ -105,6 +105,6 @@ from sklearn.metrics import confusion_matrix
  
 <b>Step 7.</b> After you have found a model that works, test that model against out of sample data using the function in my notebook.
  
- For a more detailed look, please visit my final notebook for zillow regression for further assistance.
+ For a more detailed look, please visit my final notebook for employee classification for further assistance.
  
 --------------------
