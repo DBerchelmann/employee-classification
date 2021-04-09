@@ -41,11 +41,27 @@ Here is a snapshot of my project planning/setup on the afternoon of 4/8/21
 
 |   Feature      |  Data Type   | Description    |
 | :------------- | :----------: | -----------: |
-|   |    |    |
-|      |  | |
-|    |  | |
-|   |  ||
-|    |    |   |
+|  annual_salary_2016 |Int64    |    |
+|   base_pay_2016   | Int64 |fixed amount of money that an employee receives prior to any extras being added or payments deducted |
+|  leave_payout_2016  | Int64 | |
+|  other_2016 | Int64 ||
+|  overtime_2016  |  Int64  |   |
+| gross_earnings_2016  | Int64 ||
+|  additional_compensation  |  Int64  |   |
+|  total_compensation | Int64 ||
+| department   | object   |   |
+|  gender | object ||
+|  ethnicity  |  object  |   |
+|  years_employed  |  Int64  |   |
+|  job_id  | object   |   |
+|  job_name  |  object  |   |
+|   ethnicity_ASIAN |  uint8  |   |
+|  ethnicity_BLACK  |  uint8  |   |
+|  ethnicity_HISPANIC  |  uint8  |   |
+|  ethnicity_NATIVE AMERICAN/ALASKAN  |  uint8  |   |
+|  ethnicity_NATIVE HAWAIIAN  |  uint8  |   |
+|  ethnicity_OTHER  | uint8   |   |
+|  ethnicity_WHITE  |  uint8  |   |
 
 
 
