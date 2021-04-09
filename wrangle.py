@@ -53,11 +53,15 @@ def clean_city(df):
     '''
     df = new_city_data()
     
+    # drop duplicates
+    df.drop_duplicates(keep='first', inplace=True)
+    
     # rename columns
     
     df.columns = ['first_name', 'middle_name', 'last_name', 'hire_date', 'annual_salary_2016', 'base_pay_2016', 'leave_payout_2016', 'other_2016', 'overtime_2016', 'gross_earnings_2016', 'additional_compensation', 'total_compensation', 'job_title', 'department', 'gender', 'ethnicity', 'dept_subgroup']
         
-    
+    # remove salary outliers
+    df = df[df.annual_salary_2016 < 200_000]
     
     # Convert hire_date data type to datetime data type
     df['hire_date'] = pd.to_datetime(df['hire_date'])  
@@ -87,7 +91,7 @@ def clean_city(df):
     df.drop(columns=dropcols, inplace=True)
     
     # clean up ethnicity column and replace values with similiar groupings under one descriptor
-    df['ethnicity'] = df['ethnicity'].replace({'HISPANIC OR LATINO': 'HISPANIC', 'WHITE (NON HISPANIC OR LATINO)': 'WHITE', 'BLACK OR AFRICAN AMERICAN (NON HISPANIC OR LATINO)': 'BLACK', 'ASIAN (NON HISPANIC OR LATINO)': 'ASIAN', 'ASIAN OR PACIFIC ISLANDER': 'ASIAN', 'AMERICAN INDIAN OR ALASKA NATIVE (NONHISPANIC/LAT)': 'NATIVE AMERICAN/ALASKAN', 'TWO OR MORE RACES (NON HISPANIC OR LATINO)': 'OTHER', 'NATIVE HAWAIIAN/OTHER PACIFIC ISLANDER (NON HIS)': 'NATIVE HAWAIIAN'})
+    df['ethnicity'] = df['ethnicity'].replace({'HISPANIC OR LATINO': 'HISPANIC', 'WHITE (NON HISPANIC OR LATINO)': 'WHITE', 'BLACK OR AFRICAN AMERICAN (NON HISPANIC OR LATINO)': 'BLACK', 'ASIAN (NON HISPANIC OR LATINO)': 'ASIAN', 'ASIAN OR PACIFIC ISLANDER': 'ASIAN', 'AMERICAN INDIAN OR ALASKA NATIVE (NONHISPANIC/LAT)': 'NATIVE AMERICAN', 'TWO OR MORE RACES (NON HISPANIC OR LATINO)': 'OTHER', 'NATIVE HAWAIIAN/OTHER PACIFIC ISLANDER (NON HIS)': 'NATIVE HAWAIIAN', 'NATIVE AMERICAN/ALASKAN': 'NATIVE AMERICAN'})
     
     # create dummy columns of encoded categorical variables
     dummies = pd.get_dummies(df[['ethnicity']], drop_first=False)
@@ -97,7 +101,7 @@ def clean_city(df):
     
     cols = ['annual_salary_2016', 'base_pay_2016', 'leave_payout_2016', 'other_2016', 'overtime_2016', 'gross_earnings_2016', 'additional_compensation', 'total_compensation']
     
-    df[cols] = df[cols].apply(pd.to_numeric, errors='coerce').convert_dtypes() 
+    # df[cols] = df[cols].apply(pd.to_numeric, errors='coerce').convert_dtypes() 
 
     
     return df
@@ -191,6 +195,22 @@ def split_seperate_scale(df, stratify_by= None):
     
     return train, validate, test, X_train, y_train, X_validate, y_validate, X_test, y_test, train_scaled, validate_scaled, test_scaled
 
+# Classification Train & Scale Function~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+def train_validate_test_split(df, seed=123):
+    
+    df = clean_city(df)
+    
+    train_and_validate, test = train_test_split(
+        df, test_size=0.2, random_state=seed, stratify=df.gender
+    )
+    train, validate = train_test_split(
+        train_and_validate,
+        test_size=0.3,
+        random_state=seed,
+        stratify=train_and_validate.gender,
+    )
+    return train, validate, test
 
 # Miscellaneous Prep Functions~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
