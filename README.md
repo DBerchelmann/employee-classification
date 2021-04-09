@@ -68,9 +68,15 @@ Here is a snapshot of my project planning/setup on the afternoon of 4/8/21
 
 
 -------------------
-  <h3><u>Hypothesis and Questions</u></h3>
+ <h3><u>Hypothesis and Questions</u></h3>
 
-
+- Is salary correlated with gender?
+- Is salary correlated with ethinicty?
+- Is years employed correlated with salary?
+- Is years employed correlated with gender?
+- Is year employed correlated with ethnicity?
+- Is additional compensation correlated with ethnicity?
+- Is additional compensation correlated with gender?
 
 <h5> The questions above will be answered using correlation tests, chi^2 tests and t-tests.</h5>
 
