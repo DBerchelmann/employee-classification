@@ -7,8 +7,8 @@ Welcome to the README file for my individual project covering <b>classification 
 In here, you will find expanded information on this project including goals, how I will be working through the pipeline and a data dictionary to help offer more insight to the variables that are being used.
 
 
-**** Regarding ethnicity information in this data set. The City follows EEOC
-requirements by obtaining the race/ethnicity information from employees through voluntary reporting (self identification) or from visual surveys of its workforce. Therefore, the City cannot guarantee the complete accuracy of this information.* (from data.world in regards to the information in this data set)****
+**** Regarding ethnicity information in this data set. <i>The City follows EEOC
+requirements by obtaining the race/ethnicity information from employees through voluntary reporting (self identification) or from visual surveys of its workforce. Therefore, the City cannot guarantee the complete accuracy of this information. (from data.world in regards to the information in this data set)</i>****
 
 
 
@@ -92,14 +92,14 @@ Here is a snapshot of my project planning/setup on the afternoon of 4/8/21
  
  To recreate this project you will need use the following files:
  
- wrangle.py
- explore.py
- model.py
- cosa_employee_salary.csv or you can acquire it from data.world ---> https://data.world/amillerbernd/san-antonio-city-salary-data
+ - wrangle.py
+ - explore.py
+ - model.py
+ - cosa_employee_salary.csv or you can acquire it from data.world ---> https://data.world/amillerbernd/san-antonio-city-salary-data
  
  Your target variable will be gender which is defined in the above data dictionary. Please visit my final notebook to see this variable being used.
  
- <b>Step 0</b> Clone this repo to your local machine with the above files.
+ <b>Step 0.</b> Clone this repo to your local machine with the above files.
  
  <b>Step 1.</b> Import all necessary libraries to run functions. These can be found in each corresponding .py file
  
