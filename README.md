@@ -140,3 +140,21 @@ from sklearn.metrics import confusion_matrix
  For a more detailed look, please visit my final notebook for employee classification for further assistance.
  
 --------------------
+
+
+
+<h3>Key Takeaways, Recommendations, & Next Steps</h3>
+
+Through this classification project I came away with the following <b> key takeways</b>:
+
+- The City of San Antonio appears to have an problem with pay based on gender and on ethnicity.
+- While maybe not intentional, the data does suggest that there is definite room for improvement.
+- My model performed with 75% accuracy when prediciting gender based on features like salary and ethnicity. This shows me that there is enough of a difference between these featuers across gender that computer can identify gender
+
+
+<b>Recommendations & next steps</b>:
+
+- I would recommend the city to a more in depth look into why these pay gaps exist in their departments and what can be done to bring everything into greater parity across the board.
+
+- More analysis needs to be done with a more current data set to see if this issue still persists in 2021. 
+-----
