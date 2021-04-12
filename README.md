@@ -6,6 +6,13 @@ Welcome to the README file for my individual project covering <b>classification 
 
 In here, you will find expanded information on this project including goals, how I will be working through the pipeline and a data dictionary to help offer more insight to the variables that are being used.
 
+
+**** Regarding ethnicity information in this data set. The City follows EEOC
+requirements by obtaining the race/ethnicity information from employees through voluntary reporting (self identification) or from visual surveys of its workforce. Therefore, the City cannot guarantee the complete accuracy of this information.* (from data.world in regards to the information in this data set)****
+
+
+
+
 -------------------
 <h3><u>The Goal</u></h3>
 
