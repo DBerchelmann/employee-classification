@@ -41,27 +41,27 @@ Here is a snapshot of my project planning/setup on the afternoon of 4/8/21
 
 |   Feature      |  Data Type   | Description    |
 | :------------- | :----------: | -----------: |
-|  annual_salary_2016 |Int64    |    |
+|  annual_salary_2016 |Int64    | the employee's current base salary would be for a year based on the position held at September 30, 2016   |
 |   base_pay_2016   | Int64 |fixed amount of money that an employee receives prior to any extras being added or payments deducted |
-|  leave_payout_2016  | Int64 | |
-|  other_2016 | Int64 ||
-|  overtime_2016  |  Int64  |   |
-| gross_earnings_2016  | Int64 ||
-|  additional_compensation  |  Int64  |   |
-|  total_compensation | Int64 ||
-| department   | object   |   |
-|  gender | object ||
-|  ethnicity  |  object  |   |
-|  years_employed  |  Int64  |   |
-|  job_id  | object   |   |
-|  job_name  |  object  |   |
-|   ethnicity_ASIAN |  uint8  |   |
-|  ethnicity_BLACK  |  uint8  |   |
-|  ethnicity_HISPANIC  |  uint8  |   |
-|  ethnicity_NATIVE AMERICAN/ALASKAN  |  uint8  |   |
-|  ethnicity_NATIVE HAWAIIAN  |  uint8  |   |
-|  ethnicity_OTHER  | uint8   |   |
-|  ethnicity_WHITE  |  uint8  |   |
+|  leave_payout_2016  | Int64 |leave the employee sold back to the City during the fiscal year |
+|  other_2016 | Int64 |reflects various incentives paid to City employees based on their job position and education level.|
+|  overtime_2016  |  Int64  | compensatino earned through time worked past normal house  |
+| gross_earnings_2016  | Int64 | total pay employees received between October 1st and September 30th.|
+|  additional_compensation  |  Int64  |incremental costs incurred by the City of behalf of employees to include the employer's share of FICA/Medicare, TMRS [Pension], annual Health Assessment [average healthcare benefit costs] and other related fringe provided to employees.   |
+|  total_compensation | Int64 |total cost the City incurred for the employee's services received between October 1st and September 30th|
+| department   | object   | department that employee works in  |
+|  gender | object |gender of employee|
+|  ethnicity  |  object  | ethnicty of employee as reported to the EEOC  |
+|  years_employed  |  Int64  | took todays date and substraced the hire date from it to get a 'years employed' feature  |
+|  job_id  | object   | id of employees job_name  |
+|  job_name  |  object  | job_name of employee  |
+|   ethnicity_ASIAN |  uint8  | dummies columns where 1 = Asian & 0 = not  |
+|  ethnicity_BLACK  |  uint8  |  dummies columns where 1 = Black & 0 = not   |
+|  ethnicity_HISPANIC  |  uint8  | dummies columns where 1 = Hispanic & 0 = not    |
+|  ethnicity_NATIVE AMERICAN/ALASKAN  |  uint8  | dummies columns where 1 = Native American/Alaskan & 0 = not    |
+|  ethnicity_NATIVE HAWAIIAN  |  uint8  | dummies columns where 1 = Native Hawaiian & 0 = not    |
+|  ethnicity_OTHER  | uint8   | dummies columns where 1 = Other & 0 = not    |
+|  ethnicity_WHITE  |  uint8  | dummies columns where 1 = White & 0 = not    |
 
 
 
@@ -86,10 +86,13 @@ Here is a snapshot of my project planning/setup on the afternoon of 4/8/21
  To recreate this project you will need use the following files:
  
  wrangle.py
- evaluate.py
  explore.py
+ model.py
+ cosa_employee_salary.csv or you can acquire it from data.world ---> https://data.world/amillerbernd/san-antonio-city-salary-data
  
- Your target variable will be tax_assessed_value which is defined in the above data dictionary. Please visit my final notebook to see this variable being used.
+ Your target variable will be gender which is defined in the above data dictionary. Please visit my final notebook to see this variable being used.
+ 
+ <b>Step 0</b> Clone this repo to your local machine with the above files.
  
  <b>Step 1.</b> Import all necessary libraries to run functions. These can be found in each corresponding .py file
  
